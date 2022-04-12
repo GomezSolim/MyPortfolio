@@ -1,0 +1,89 @@
+/*modifier la police avec google fonts et importer les polices souhaitées*/
+@import url('https://fonts.googleapis.com/css2? family= Fira+Sans:ital,wght@0,400;1,200 & family= Oswald:wght@300 & display=swap');
+body{
+    padding: 0 2%;
+    margin: 0;
+    font-family: 'fira  sans', sans-serif;
+}
+nav{
+    display: flex; /*aligner nos element 'items de nav'*/
+    /*flex-direction: row;*/
+    flex-wrap: wrap;/*passer a la ligne lorsque l'element ne rentre pas*/
+    justify-content: space-between; /*mettre un grand espace entre nos elements*/
+    background-color: white;
+    align-items: center;
+    position: sticky; /*modifier la position de la barre de navigation*/
+    top: 0;
+}
+nav .profil{
+    display: flex;
+    align-items: center;
+}
+nav .profil img{/*modifier la taille de l'mage et arrondir les bords'*/
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+nav .profil h1{/*la taille a 15px et appliqué une marge a l'exterieure a gauche'*/
+    font-size: 15px;
+    margin-left: 10px;
+}
+nav ul{
+    display: flex;
+    list-style-type: none; /*aligner nos element et retirer les points noirs qui sont place avant'*/
+}
+nav ul li{
+    margin-left: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;/*modifier la couleur lorsque l'utilsateur va placer le cursor au dessus de chaue element*/
+}
+nav ul li:hover{/*specifier losrque le user place son cursor au dessus de l'element*/
+    border-bottom-color: black;
+}
+.page-content{
+    margin: 4%; /*marges extérieures*/
+}
+.page-content header{
+    margin-top: 5%; /*marges extérieures*/
+    max-width: 80%; /*largeur max*/
+}
+.page-content header h1{
+    margin: 0; /*marges extérieures*/
+   text-transform: uppercase;
+   font-family: 'Oswald', sans-serif;
+   font-size: 6vw;/* view wiss (porte) pour notre texte elle fait 6 largeur de notre page*/
+}
+.page-content header p{
+    line-height: 30px;/*l'espace inserrer entre chaque ligne est agrandi*/
+    color: #818181; /* couleur grise a notre texte*/
+}
+.page-content header button{
+    background-color: inherit;/*prendre la couleur de son parent*/
+    border: none;
+    outline: none;/*enlever la couleur de la bordure lorsqu'on clic sur le bouton*/
+    padding-left: 0;
+    font-size: 15px;
+    font-weight: bold; /*graisse du texte*/
+    border-bottom: 1px solid #ccc;/*bordure en dessous de notre texte*/
+    padding-bottom: 5px; /* marge intérieur en bas*/
+    cursor: pointer;
+}
+.page-content header button:hover{
+    color: #ccc;
+    border-bottom-color: #000;
+}
+/* avec les media queries on applique les differentes propriétes aux différentes taille (resolutions) des ecrans*/
+@media screen and (max-width: 700px){
+    /*  //.. ce code s'execute lorsque le choix de format mobil ou la taille de l'ecran est selectionnée, si la taille selectionné est superieur a 700px alors le code neva pas s'executer*/
+    nav{
+        justify-content: center;
+    }
+    nav ul{
+        display: none;
+    }
+    .page-content header{
+        margin-top: 100%;
+        max-width: 100%; /*ocuuper a 100% la taille de l'espace quil peut occupé sur le petit écran*/
+    }
+
+}
